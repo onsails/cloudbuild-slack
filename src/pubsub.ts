@@ -13,7 +13,6 @@ export interface RepoSource {
   commitSha: string;
   dir: string;
   projectId: string;
-  substitutions: Map<string, string>;
 }
 
 export interface Build {
@@ -21,6 +20,7 @@ export interface Build {
   status: string;
   logUrl: string;
   source: Source;
+  substitutions: { [key: string]: string };
 }
 
 export function deserBuild(event: Event): Build {

@@ -1,6 +1,8 @@
 import { IncomingWebhook } from '@slack/webhook';
 import * as pubsub from './pubsub';
 import * as render from './render';
+import sourceMapSupport from 'source-map-support';
+sourceMapSupport.install();
 
 const url = process.env.SLACK_WEBHOOK_URL!;
 

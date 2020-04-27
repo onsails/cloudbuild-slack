@@ -1,5 +1,6 @@
 import { IncomingWebhookSendArguments } from '@slack/webhook';
 import { SectionBlock } from '@slack/types';
+import * as ejs from 'ejs';
 import * as pubsub from './pubsub';
 
 export function statusEmoji(status: string): string {
@@ -17,17 +18,27 @@ export function statusEmoji(status: string): string {
   }
 }
 
+const DEFAULT_TITLE_TEMPLATE =
+  '<%= emoji %> `<%= build.id %>` <%= build.status %>';
+
 export function createMessage(
   build: pubsub.Build
 ): IncomingWebhookSendArguments {
   let emoji = statusEmoji(build.status);
-  let status = build.status;
+
+  let templateToRender =
+    build.substitutions['_SLACK_MESSAGE_TEMPLATE'] || DEFAULT_TITLE_TEMPLATE;
+
+  const text = ejs.render(templateToRender, {
+    build: build,
+    emoji: emoji,
+  });
 
   let titleBlock: SectionBlock = {
     type: 'section',
     text: {
       type: 'mrkdwn',
-      text: `${emoji} \`${build.id}\` ${status}`,
+      text: text,
     },
   };
 

@@ -35,12 +35,16 @@
   "author": "Andrey Kuznetsov",
   "module": "dist/subscribeslack.esm.js",
   "devDependencies": {
+    "@types/ejs": "^3.0.3",
+    "@types/source-map-support": "^0.5.1",
     "husky": "^4.2.5",
     "tsdx": "^0.13.2",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@slack/webhook": "^5.0.3"
+    "@slack/webhook": "^5.0.3",
+    "ejs": "^3.1.2",
+    "source-map-support": "^0.5.19"
   }
 }

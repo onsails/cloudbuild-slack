@@ -1,27 +1,36 @@
-# TSDX Bootstrap
+# Google Cloud Function for Slack notifications about Cloud Builds written in TypeScript
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+Features:
 
-## Local Development
+* send slack notifications about successful and failed builds;
+* link to build details in slack message;
+* show trigger information in slack message;
+* customize slack message using substitution in cloudbuild.yaml.
 
-Below is a list of commands you will probably find useful.
 
-### `npm start` or `yarn start`
+# Deploy
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+Prerequisites:
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+* Google Cloud Platform project with enabled Cloud Functions API;
+* gcloud command-line util authorized to deploy cloud functions;
+* Slack webhook url.
 
-Your library will be rebuilt if you make edits.
+Deployment:
 
-### `npm run build` or `yarn build`
+```bash
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR_TOKENS ./deploy.sh
+```
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+This script will deploy cloud function `gcbSubscribeSlack` triggered by `cloud-build` PubSub topic.
 
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
+Message customization can be done by setting `_SLACK_MESSAGE_TEMPLATE` substitution in cloudbuild.yaml to a valid [ejs](https://ejs.co) template:
 
-### `npm test` or `yarn test`
+```yaml
+steps:
 
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+# ... build steps ...
+
+substitutions:
+  _SLACK_MESSAGE_TEMPLATE: '<%= emoji %> frontend build & deploy `<%= build.id %>` <%= build.status %>'
+```
