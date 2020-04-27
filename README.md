@@ -24,7 +24,7 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR_TOKENS ./deploy.sh
 
 This script will deploy cloud function `gcbSubscribeSlack` triggered by `cloud-build` PubSub topic.
 
-Message can be customized by defining `_SLACK_MESSAGE_TEMPLATE` substitution in cloudbuild.yaml. Value should be valid [ejs](https://ejs.co) template:
+Message can be customized by defining `_SLACK_MESSAGE_TEMPLATE` substitution in cloudbuild.yaml. Value should be a valid [ejs](https://ejs.co) template:
 
 ```yaml
 steps:
