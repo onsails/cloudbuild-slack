@@ -2,10 +2,10 @@
 
 Features:
 
-* send slack notifications about successful and failed builds;
-* link to build details in slack message;
-* show trigger information in slack message;
-* customize slack message using substitution in cloudbuild.yaml.
+- [x] send slack notifications about successful and failed builds;
+- [x] link to build details in slack message;
+- [ ] show trigger information in slack message;
+- [x] customize slack message using substitution in cloudbuild.yaml.
 
 
 # Deploy
