@@ -7,6 +7,7 @@ Features:
 - [ ] show trigger information in slack message;
 - [x] customize slack message using substitution in cloudbuild.yaml.
 
+![Slack message](https://github.com/onsails/cloudbuild-slack/raw/master/screenshot.png "Slack message")
 
 # Deploy
 
