@@ -33,7 +33,7 @@ steps:
 # ... build steps ...
 
 substitutions:
-  _SLACK_MESSAGE_TEMPLATE: '<%= emoji %> frontend build & deploy `<%= build.id %>` <%= build.status %>'
+  _SLACK_MESSAGE_TEMPLATE: '<%= emoji %> *https://<%= build.substitutions._OVERLAY %>.example.com* frontend build & deploy `<%= build.id %>` <%= build.status %>'
 ```
 
 `emoji` corresponds to a build status, `build` is object containing build information, it's structure is defined [here](https://github.com/onsails/cloudbuild-slack/blob/master/src/pubsub.ts).
