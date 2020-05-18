@@ -1,4 +1,4 @@
-# Google Cloud Function for Slack notifications about Cloud Builds written in TypeScript
+# Google Cloud Function for sending Cloud Cloud Build statuses to Slack written in TypeScript
 
 Features:
 
