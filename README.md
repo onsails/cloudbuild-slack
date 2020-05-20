@@ -26,7 +26,7 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR_TOKENS ./deploy.sh
 
 This script will deploy cloud function `gcbSubscribeSlack` triggered by `cloud-build` PubSub topic.
 
-Message can be customized by defining `_SLACK_MESSAGE_TEMPLATE` substitution in cloudbuild.yaml. Value should be a valid [ejs](https://ejs.co) template:
+Message content can be (optionally) defined by `_SLACK_MESSAGE_TEMPLATE` substitution in cloudbuild.yaml. Value should be a valid [ejs](https://ejs.co) template:
 
 ```yaml
 steps:
@@ -38,3 +38,5 @@ substitutions:
 ```
 
 `emoji` corresponds to a build status, `build` is object containing build information, it's structure is defined [here](https://github.com/onsails/cloudbuild-slack/blob/master/src/pubsub.ts).
+
+The default message template is ```<%= emoji %> `<%= build.id %>` <%= build.status %>```
