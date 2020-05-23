@@ -9,6 +9,7 @@ Features:
 - [x] customize slack message using substitution in cloudbuild.yaml.
 
 ![Slack message](https://github.com/onsails/cloudbuild-slack/raw/master/screenshot.png "Slack message")
+![Slack message](https://github.com/onsails/cloudbuild-slack/raw/master/screenshot-fail.png "Slack message")
 
 # Deploy
 
