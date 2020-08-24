@@ -36,7 +36,7 @@
   "module": "dist/subscribeslack.esm.js",
   "devDependencies": {
     "@types/ejs": "^3.0.4",
-    "@types/source-map-support": "^0.5.2",
+    "@types/source-map-support": "^0.5.3",
     "husky": "^4.2.5",
     "tsdx": "^0.13.3",
     "tslib": "^2.0.1",
