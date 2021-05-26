@@ -55,7 +55,7 @@ export function createMessage(
     descBlock.fields = [
       {
         type: 'mrkdwn',
-        text: `*Repo*: ${repoSource.repoName}, *branch*: ${repoSource.branchName}, *commit*: ${repoSource.commitSha}\n<${build.logUrl}|*Details*>`,
+        text: `*Repo*: ${repoSource.repoName}, *branch*: ${build.substitutions['BRANCH_NAME']}, *commit*: ${repoSource.commitSha}\n<${build.logUrl}|*Details*>`,
       },
     ];
   } else {

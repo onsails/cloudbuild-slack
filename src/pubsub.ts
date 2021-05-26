@@ -21,6 +21,8 @@ export interface Build {
   logUrl: string;
   source: Source;
   substitutions: { [key: string]: string };
+  BRANCH_NAME: string;
+  SHORT_SHA: string;
 }
 
 export function deserBuild(event: Event): Build {
