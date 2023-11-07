@@ -1364,10 +1364,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/source-map-support@0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@types/source-map-support/-/source-map-support-0.5.3.tgz#acb6b3e499c20692552d16934c16162c84594e16"
-  integrity sha512-fvjMjVH8Rmokw2dWh1dkj90iX5R8FPjeZzjNH+6eFXReh0QnHFf1YBl3B0CF0RohIAA3SDRJsGeeUWKl6d7HqA==
+"@types/source-map-support@0.5.10":
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/@types/source-map-support/-/source-map-support-0.5.10.tgz#824dcef989496bae98e9d04c8dc1ac1d70e1bd39"
+  integrity sha512-tgVP2H469x9zq34Z0m/fgPewGhg/MLClalNOiPIzQlXrSS2YrKu/xCdSCKnEDwkFha51VKEKB6A9wW26/ZNwzA==
   dependencies:
     source-map "^0.6.0"
 
